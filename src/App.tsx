@@ -3,7 +3,7 @@ import {fetcher} from "./helpers/fetcher";
 import URLInputForm from "./components/url-input-form";
 import MetadataDisplay from "./components/metadata-display";
 import {ErrorResponse,Data} from "./interfaces";
-import Loader from "./components/loader.tsx";
+import Loader from "./components/loader";
 
 const App: React.FC = () => {
     const [metadata, setMetadata] = useState<Data[]>([]);
@@ -30,7 +30,7 @@ const App: React.FC = () => {
               <URLInputForm onSubmit={handleSubmit}/>
 
               <MetadataDisplay metadata={metadata} errors={error} />
-              
+
           </div>
       </div>
   )

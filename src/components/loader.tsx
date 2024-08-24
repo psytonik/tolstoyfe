@@ -1,6 +1,6 @@
 import React from "react";
 
-const Loader: React.FC<HTMLDivElement> = () => {
+const Loader: React.FC = () => {
 	return (
 		<div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-75 z-50">
 			<div className="flex flex-col items-center">
