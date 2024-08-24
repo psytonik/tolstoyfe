@@ -5,7 +5,7 @@ interface URLInputFormProps {
 }
 
 const URLInputForm: React.FC<URLInputFormProps> = ({ onSubmit }) => {
-	const [urls, setUrls] = useState<string[]>(Array(3).fill(""));
+	const [urls, setUrls] = useState<string[]>([""]);
 	const [formError, setFormError] = useState<string | null>(null);
 
 	const handleChange = (index: number, event: ChangeEvent<HTMLInputElement>) => {
@@ -29,10 +29,9 @@ const URLInputForm: React.FC<URLInputFormProps> = ({ onSubmit }) => {
 			setFormError("Please enter at least 3 URLs.");
 			return;
 		}
-
 		onSubmit(filteredUrls);
 		setFormError(null)
-		setUrls(["","",""])
+		setUrls([""])
 	};
 
 	return (
@@ -47,13 +46,16 @@ const URLInputForm: React.FC<URLInputFormProps> = ({ onSubmit }) => {
 						placeholder={`URL ${index + 1}`}
 						className="w-full p-2 pr-10 border border-gray-300 rounded"
 					/>
-					<button
-						type="button"
-						onClick={() => handleRemoveInput(index)}
-						className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-red-500 text-white p-1 rounded"
-					>
-						✕
-					</button>
+					{urls.length > 1 && (
+						<button
+							type="button"
+							onClick={() => handleRemoveInput(index)}
+							className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-red-500 text-white p-1 rounded"
+						>
+							Remove
+						</button>
+					)}
+
 				</div>
 			))}
 			<button

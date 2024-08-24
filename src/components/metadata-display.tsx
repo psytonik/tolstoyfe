@@ -1,5 +1,5 @@
 import React from "react";
-import {ErrorResponse,Data} from "./interfaces";
+import {ErrorResponse,Data} from "../interfaces";
 
 interface MetadataDisplayProps {
 	metadata: Data[];
