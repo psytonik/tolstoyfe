@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .loader {
+        border-color: #d1d5db;
+        border-top-color: #3490dc;
+        animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    .animate-spin {
+        animation: spin 1s linear infinite;
+    }
+}
